@@ -1,8 +1,9 @@
-    @section('title','Task List')
+@extends('layouts.app')
+@section('title','Task List')
     <!-- @isset($name)
     <h1>My name is {{$name}}</h1>
     @endisset -->
-    @section('content')
+@section('content')
     <!-- @if (count($tasks))
             @foreach ($tasks as $task)
             <div>
@@ -23,7 +24,7 @@
             There are no tasks
         </div>
         @endforelse
-    @endsection
+@endsection
 
 
 
