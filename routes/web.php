@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/tasks', function (){
     return view('index', [
-        'tasks' => Task::all()
+        'tasks' => Task::paginate(5)
         //'tasks' => Task::latest()->get() -- gets the latest created row (most recent)
         //'tasks' => Task::latest()->where('completed',true)->get() -- gets the latest created row (most recent)
         //where the column completed is true
