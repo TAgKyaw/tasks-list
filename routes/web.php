@@ -30,7 +30,7 @@ Route::get('/', function () {
     return redirect()->route('tasks.index');
 });
 
-Route::view('/tasks/create','create');
+Route::view('/tasks/create','create')->name('tasks.create');
 
 Route::get('/tasks/{task}/edit', function(Task $task) {
     return view('edit',[
@@ -80,6 +80,14 @@ Route::delete('/tasks/{task}', function (Task $task){
 
     return redirect()->route('tasks.index')->with('success','Task deleted successfully');
 })->name('tasks.destroy');
+
+Route::put('tasks/{task}/toggle-complete', function(Task $task){
+    $task->toggleComplete();
+
+    return redirect()->back()->with('Success','Task Updated Successfully!');
+})->name('tasks.toggle-complete');
+
+
 // Route::get('/tasks/{id}', function($id) use($tasks){
 //     return view('show',[
 //         'task' => \App\Models\Task::findOrFail($id)

@@ -4,6 +4,9 @@
     <h1>My name is {{$name}}</h1>
     @endisset -->
 @section('content')
+    <div>
+        <a href="{{ route('tasks.create') }}">Create Task</a>
+    </div>
     <!-- @if (count($tasks))
             @foreach ($tasks as $task)
             <div>
